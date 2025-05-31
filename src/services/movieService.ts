@@ -7,7 +7,7 @@ interface MovieResProps {
 
 const API_URL = 'https://api.themoviedb.org/3/search/movie';
 
-export default async function fetchData(newTopic: string) {
+export default async function fetchData(newTopic: string): Promise<Movie[]> {
     const response = await axios.get<MovieResProps>(API_URL, {
         params: {
             query: newTopic
